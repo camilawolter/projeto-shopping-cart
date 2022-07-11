@@ -41,6 +41,8 @@ const createCartItemElement = ({ sku, name, salePrice }) => {
 async function fetchProductsResult() {
   const itemsSection = document.getElementsByClassName('items')[0];
 
+  itemsSection.innerHTML = '<ol class="loading"<li>Carregando...</li></ol>';
+
   setTimeout(async () => {
     const result = await fetchProducts('computador');
     itemsSection.innerHTML = '';
