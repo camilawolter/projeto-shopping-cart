@@ -26,7 +26,7 @@ const createCartItemElement = ({ sku, name, salePrice }) => {
   return li;
 };
 
-async function fetchItemsResult(id) {
+const fetchItemsResult = async (id) => {
   const result = await fetchItem(id);
   const cartItems = document.querySelector('.cart__items');
   const cart = createCartItemElement({ 
@@ -52,7 +52,7 @@ const createProductItemElement = ({ sku, name, image }) => {
   return section;
 };
 
-async function fetchProductsResult() {
+const fetchProductsResult = async () => {
   const itemsSection = document.getElementsByClassName('items')[0];
 
   itemsSection.innerHTML = '<ol class="loading"<li>Carregando...</li></ol>';
@@ -66,7 +66,7 @@ async function fetchProductsResult() {
   }, 2000);
 }
 
-function buttonClearCart() {
+const buttonClearCart = () => {
   const button = document.querySelector('.empty-cart');
   const cartItems = document.querySelector('.cart__items');
   button.addEventListener('click', () => {
