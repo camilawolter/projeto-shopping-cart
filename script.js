@@ -66,6 +66,15 @@ async function fetchProductsResult() {
   }, 2000);
 }
 
+function buttonClearCart() {
+  const button = document.querySelector('.empty-cart');
+  const cartItems = document.querySelector('.cart__items');
+  button.addEventListener('click', () => {
+    cartItems.innerHTML = '';
+  });
+}
+
 window.onload = () => {
   fetchProductsResult();
+  buttonClearCart();
  };
