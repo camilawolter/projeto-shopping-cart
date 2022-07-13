@@ -76,7 +76,7 @@ const buttonClearCart = () => {
 };
 
 const localStorageCart = () => {
-  const cartStorage = localStorage.getItem('cartItems'); //getSavedCartItems
+  const cartStorage = localStorage.getItem('cartItems'); 
   cartItems.innerHTML = cartStorage;
 };
 
