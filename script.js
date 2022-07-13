@@ -71,11 +71,12 @@ const buttonClearCart = () => {
   const button = document.querySelector('.empty-cart');
   button.addEventListener('click', () => {
     cartItems.innerHTML = '';
+    localStorage.clear();
   });
 };
 
 const localStorageCart = () => {
-  const cartStorage = localStorage.getItem('cartItems');
+  const cartStorage = localStorage.getItem('cartItems'); //getSavedCartItems
   cartItems.innerHTML = cartStorage;
 };
 
