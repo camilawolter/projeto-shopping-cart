@@ -16,6 +16,15 @@ const createCustomElement = (element, className, innerText) => {
 
 const getSkuFromProductItem = (item) => item.querySelector('span.item__sku').innerText;
 
+const sumTotalItemsCart = () => {
+  const cartItemsAll = document.querySelectorAll('.cart__item');
+  const arrayCart = [...cartItemsAll].map((item) => item.innerText);
+  
+  const getPrice = arrayCart.map((item) => {
+
+  })
+};
+
 const cartItemClickListener = (event) => {
   event.target.remove();
 };
@@ -78,6 +87,7 @@ const buttonClearCart = () => {
 const localStorageCart = () => {
   const cartStorage = localStorage.getItem('cartItems'); 
   cartItems.innerHTML = cartStorage;
+  
   const cartItemsAll = document.querySelectorAll('.cart__item');
   cartItemsAll.forEach((item) => item.addEventListener('click', cartItemClickListener));
 };
